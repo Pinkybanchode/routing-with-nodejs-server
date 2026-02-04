@@ -1,10 +1,11 @@
+// importing http module
 const http = require('http');
 
 const port = 3000;
-
+//create server
 const server = http.createServer((req, res) => {
+    //basic html with fixed nav bar
     res.write(`<html>
-
 <head>
     <title>Assignment 2</title>
     <style>
@@ -120,6 +121,7 @@ const server = http.createServer((req, res) => {
             UserName
         </div>
     </nav>`);
+    // body content based on url
     if (req.url === '/' || req.url === '/home') {
         res.write(`<div class="section">
         <div class="left_div">
@@ -221,6 +223,7 @@ const server = http.createServer((req, res) => {
     res.end();
 });
 
+// start server
 server.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);
 });
