@@ -4,105 +4,118 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
     res.write(`<html>
-                    <head>
-                        <title>Assignment 6</title>
-                            <style>
-                                body {
-            font-family: sans-serif;
-            margin: auto;
-            color: #4b5b67;
-        }
+        <head>
+            <title>Assignment 6</title>
+            <style>
+                body {
+                    font-family: sans-serif;
+                    margin: auto;
+                    color: #4b5b67;
+                }
 
-        .username {
-            background-color: #e7f7ff;
-            color: #31b4ff;
-            padding: 18px;
-            font-weight: bold;
-            border-radius: 10px;
+                .username {
+                    background-color: #e7f7ff;
+                    color: #31b4ff;
+                    padding: 18px;
+                    font-weight: bold;
+                    border-radius: 10px;
+                }
 
-        }
+                ul {
+                    display: flex;
+                    list-style-type: none;
+                    gap: 30px;
+                    color: #8b8b8b;
+                }
 
-        ul {
-            display: flex;
-            list-style-type: none;
-            gap: 30px;
-            color: #8b8b8b;
+                .nav {
+                    display: flex;
+                    padding: 0 20px;
+                    align-items: center;
+                    justify-content: space-around;
+                }
 
-        }
+                .section {
+                    display: flex;
+                    align-items: center;
+                    margin: 60px 200px;
+                }
 
-        .nav {
-            display: flex;
-            padding: 0 20px;
-            align-items: center;
-            justify-content: space-around;
+                .section div {
+                    width: 50%;
+                    padding: 0 20px;
+                }
 
-        }
-            .section{
-            display: flex;
-            align-item: center;
-            margin: 60px 200px}
-            .section div{
-    width: 50%;
-    padding: 0 20px;
-}
-.left_div p{
-    color: #8b8b8b;
-    line-height: 1.5;
-}
-.right_div img{
-    width: 400px;
-}
-.button{
-    background: #15acff;
-    color:white;
-    border: none;
-    border-radius: 10px;
-    height: 49px;
-    width:237px;
-    margin: 25px 0;
-}
+                .left_div p {
+                    color: #8b8b8b;
+                    line-height: 1.5;
+                }
 
-            .logo,
-        .menu li,
-        .username {
-            cursor: pointer;
-        }
-            .about, .contact-info{
-                margin:50px 200px}
-                .quality-desc{
-    display: flex;
-    padding: 10px;
-    text-align: center;
-    justify-content: space-around;
-}
-.attr-icon{
-    width: 100px;
-    margin-bottom: 5px;
-}
-.key-attr{
-    margin:10px;
-    width:225px;
-}
-.key-attr p{
-    font-weight: 100;
-    padding:10px 0;
-    font-size:x-small;
-}
-    </style>
-    </head>
-    <body>
-    <nav class="nav">
-        <div class="logo">
-            <h1>Logo</h1>
-        </div>
-        <ul class="menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-        </ul>
-        <div class="username">UserName</div>
-    </nav>`)
+                .right_div img {
+                    width: 400px;
+                }
+
+                .button {
+                    background: #15acff;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    height: 49px;
+                    width: 237px;
+                    margin: 25px 0;
+                }
+
+                .about, .contact-info {
+                    margin: 50px 200px;
+                }
+
+                .quality-desc {
+                    display: flex;
+                    padding: 10px;
+                    text-align: center;
+                    justify-content: space-around;
+                }
+
+                .attr-icon {
+                    width: 100px;
+                    margin-bottom: 5px;
+                }
+
+                .key-attr {
+                    margin: 10px;
+                    width: 225px;
+                }
+
+                .key-attr p {
+                    font-weight: 100;
+                    padding: 10px 0;
+                    font-size: small;
+                }
+
+                .logo, .menu li, .username {
+                    cursor: pointer;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            </style>
+        </head>
+
+        <body>
+            <nav class="nav">
+                <div class="logo">
+                    <h1>Logo</h1>
+                </div>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+                <div class="username">UserName</div>
+            </nav>`)
     if (req.url === '/' || req.url === '/home') {
         res.write(`<div class="section">
     <div class="left_div">
@@ -186,8 +199,8 @@ const server = http.createServer((req, res) => {
     else {
         res.write(`<h1 style="text-align: center;">404 Not Found</h1>`);
     }
-        res.write(`</body></html>`);
-        res.end();
+    res.write(`</body></html>`);
+    res.end();
 })
 
 server.listen(port, () => {
